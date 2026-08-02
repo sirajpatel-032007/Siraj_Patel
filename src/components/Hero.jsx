@@ -106,7 +106,7 @@ export default function Hero() {
             {/* Speech Cloud/Bubble */}
             <div className="speech-cloud">
               <span className="speech-emoji">👋</span>
-              <span className="speech-text">hello from vraj patel</span>
+              <span className="speech-text">hello from Siraj patel </span>
               <div className="speech-arrow"></div>
             </div>
           </div>
