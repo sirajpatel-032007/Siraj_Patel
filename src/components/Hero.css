@@ -1,0 +1,329 @@
+.hero-section {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 100px 0 40px;
+}
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 40px;
+  align-items: center;
+  width: 100%;
+  max-width: 1200px;
+  z-index: 10;
+}
+
+/* Left Column Styling */
+.hero-left-col {
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.badge-container {
+  margin-bottom: 24px;
+}
+
+.hero-badge {
+  background: rgba(0, 255, 102, 0.08);
+  border: 1px solid rgba(0, 255, 102, 0.25);
+  color: var(--accent-cyan);
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  padding: 6px 16px;
+  border-radius: 20px;
+  text-shadow: 0 0 10px rgba(0, 255, 102, 0.1);
+  letter-spacing: 0.5px;
+}
+
+.hero-title {
+  font-size: 4.5rem;
+  font-weight: 800;
+  line-height: 1.1;
+  margin-bottom: 20px;
+  letter-spacing: -0.03em;
+}
+
+.typewriter-container {
+  font-family: var(--font-heading);
+  font-size: 1.6rem;
+  font-weight: 500;
+  margin-bottom: 24px;
+  color: var(--text-primary);
+  min-height: 2.2rem;
+  display: flex;
+  align-items: center;
+}
+
+.typewriter-prefix {
+  color: var(--text-secondary);
+}
+
+.typewriter-text {
+  color: var(--accent-cyan);
+  text-shadow: 0 0 8px rgba(0, 255, 102, 0.25);
+  margin-left: 8px;
+}
+
+.typewriter-cursor {
+  color: var(--accent-cyan);
+  animation: cursor-blink 0.8s infinite;
+  margin-left: 2px;
+}
+
+.hero-description {
+  font-size: 1.15rem;
+  line-height: 1.6;
+  color: var(--text-secondary);
+  max-width: 600px;
+  margin-bottom: 40px;
+}
+
+.hero-ctas {
+  display: flex;
+  gap: 20px;
+}
+
+/* Right Column & 3D Model Styling */
+.hero-right-col {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  width: 100%;
+}
+
+.hero-3d-model-wrapper {
+  width: 100%;
+  max-width: 480px;
+  height: 480px;
+  position: relative;
+}
+
+/* Speech Cloud / Bubble */
+.speech-cloud {
+  position: absolute;
+  top: 10px;
+  right: 10%;
+  background: rgba(0, 255, 102, 0.15);
+  backdrop-filter: var(--glass-blur);
+  -webkit-backdrop-filter: var(--glass-blur);
+  border: 1px solid rgba(0, 255, 102, 0.3);
+  box-shadow: var(--glow-cyan), 0 8px 32px rgba(0, 0, 0, 0.6);
+  border-radius: 20px;
+  padding: 12px 24px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  z-index: 12;
+  transform-origin: bottom center;
+  animation: speech-float 3.5s ease-in-out infinite;
+}
+
+.speech-emoji {
+  font-size: 1.2rem;
+}
+
+.speech-text {
+  font-family: var(--font-heading);
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--text-primary);
+  white-space: nowrap;
+}
+
+.speech-arrow {
+  position: absolute;
+  bottom: -8px;
+  left: 30%;
+  width: 16px;
+  height: 16px;
+  background: rgba(0, 255, 102, 0.15);
+  border-right: 1px solid rgba(0, 255, 102, 0.3);
+  border-bottom: 1px solid rgba(0, 255, 102, 0.3);
+  transform: rotate(45deg);
+  backdrop-filter: var(--glass-blur);
+  -webkit-backdrop-filter: var(--glass-blur);
+}
+
+/* Mouse Scroll Indicator */
+.scroll-indicator {
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+  z-index: 10;
+  opacity: 0.7;
+  transition: opacity 0.3s ease;
+}
+
+.scroll-indicator:hover {
+  opacity: 1;
+}
+
+.mouse {
+  width: 22px;
+  height: 36px;
+  border: 2px solid var(--text-secondary);
+  border-radius: 11px;
+  display: flex;
+  justify-content: center;
+  padding-top: 5px;
+}
+
+.wheel {
+  width: 4px;
+  height: 8px;
+  background-color: var(--accent-cyan);
+  border-radius: 2px;
+  animation: scroll-wheel 1.6s infinite ease-out;
+}
+
+.arrows {
+  display: flex;
+  flex-direction: column;
+  margin-top: 6px;
+}
+
+.arrows span {
+  display: block;
+  width: 6px;
+  height: 6px;
+  border-right: 2px solid var(--text-secondary);
+  border-bottom: 2px solid var(--text-secondary);
+  transform: rotate(45deg);
+  margin: -2px 0;
+  animation: scroll-arrow 1.6s infinite;
+}
+
+.arrows span:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+/* Keyframes */
+@keyframes cursor-blink {
+  50% { opacity: 0; }
+}
+
+@keyframes scroll-wheel {
+  0% { transform: translateY(0); opacity: 1; }
+  100% { transform: translateY(12px); opacity: 0; }
+}
+
+@keyframes scroll-arrow {
+  0% { opacity: 0; transform: rotate(45deg) translate(-2px, -2px); }
+  50% { opacity: 1; }
+  100% { opacity: 0; transform: rotate(45deg) translate(2px, 2px); }
+}
+
+@keyframes speech-float {
+  0% { transform: translateY(0) scale(1); }
+  50% { transform: translateY(-8px) scale(1.02); }
+  100% { transform: translateY(0) scale(1); }
+}
+
+/* Responsive Styles */
+@media (max-width: 992px) {
+  .hero-grid {
+    grid-template-columns: 1fr;
+    gap: 30px;
+    text-align: center;
+  }
+  
+  .hero-left-col {
+    align-items: center;
+    text-align: center;
+  }
+  
+  .hero-description {
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .hero-right-col {
+    order: -1; 
+  }
+  
+  .hero-3d-model-wrapper {
+    height: 400px;
+    max-width: 400px;
+  }
+  
+  .speech-cloud {
+    right: 5%;
+    top: 0;
+  }
+  
+  .scroll-indicator {
+    display: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-title {
+    font-size: 3rem;
+  }
+  
+  .typewriter-container {
+    font-size: 1.3rem;
+    min-height: 1.8rem;
+  }
+  
+  .hero-ctas {
+    flex-direction: column;
+    gap: 16px;
+    width: 100%;
+    max-width: 280px;
+  }
+  
+  .btn-glow {
+    width: 100%;
+    justify-content: center;
+  }
+  
+  .hero-3d-model-wrapper {
+    height: 320px;
+    max-width: 320px;
+  }
+  
+  .speech-cloud {
+    padding: 8px 16px;
+    font-size: 0.8rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-section {
+    padding: 80px 0 20px;
+  }
+  
+  .hero-title {
+    font-size: 2.2rem;
+  }
+  
+  .typewriter-container {
+    font-size: 1.1rem;
+    min-height: 1.6rem;
+    flex-wrap: wrap;
+  }
+  
+  .hero-description {
+    font-size: 1rem;
+    margin-bottom: 24px;
+    line-height: 1.5;
+  }
+  
+  .hero-3d-model-wrapper {
+    height: 280px;
+    max-width: 280px;
+  }
+}

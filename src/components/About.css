@@ -1,0 +1,139 @@
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.3fr;
+  gap: 48px;
+  align-items: center;
+}
+
+.about-image-container {
+  display: flex;
+  justify-content: center;
+  position: relative;
+}
+
+.image-frame {
+  position: relative;
+  padding: 12px;
+  border-radius: 24px;
+  overflow: hidden;
+  max-width: 380px;
+  width: 100%;
+  aspect-ratio: 1 / 1.15;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(14, 11, 23, 0.5);
+}
+
+.about-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 16px;
+  transition: transform 0.5s ease;
+  z-index: 2;
+  filter: grayscale(20%) contrast(110%);
+}
+
+.image-frame:hover .about-image {
+  transform: scale(1.03);
+  filter: grayscale(0%) contrast(100%);
+}
+
+.image-glow {
+  position: absolute;
+  top: -10%;
+  left: -10%;
+  width: 120%;
+  height: 120%;
+  background: radial-gradient(circle, rgba(0, 240, 255, 0.15) 0%, rgba(192, 54, 255, 0.05) 50%, transparent 70%);
+  z-index: 1;
+  pointer-events: none;
+  transition: all 0.5s ease;
+}
+
+.image-frame:hover .image-glow {
+  background: radial-gradient(circle, rgba(0, 240, 255, 0.25) 0%, rgba(192, 54, 255, 0.1) 50%, transparent 70%);
+}
+
+.about-info {
+  padding: 40px;
+  text-align: left;
+}
+
+.about-subtitle {
+  font-size: 1.6rem;
+  font-weight: 600;
+  margin-bottom: 20px;
+  color: var(--text-primary);
+  border-left: 3px solid var(--accent-cyan);
+  padding-left: 12px;
+}
+
+.about-text {
+  font-size: 1.05rem;
+  line-height: 1.6;
+  color: var(--text-secondary);
+  margin-bottom: 20px;
+}
+
+.about-text strong {
+  color: var(--accent-cyan);
+}
+
+.about-highlights {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 32px;
+  padding-top: 32px;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  gap: 16px;
+}
+
+.highlight-item {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.highlight-number {
+  font-family: var(--font-heading);
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: var(--accent-cyan);
+  text-shadow: var(--glow-cyan);
+  line-height: 1.1;
+}
+
+.highlight-label {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  margin-top: 6px;
+}
+
+/* Responsive styles */
+@media (max-width: 992px) {
+  .about-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  
+  .about-image-container {
+    order: -1;
+  }
+  
+  .about-info {
+    padding: 30px;
+  }
+}
+
+@media (max-width: 480px) {
+  .about-highlights {
+    flex-direction: column;
+    gap: 24px;
+  }
+  
+  .highlight-number {
+    font-size: 1.8rem;
+  }
+}
