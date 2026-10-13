@@ -1,5 +1,5 @@
 # Technical Requirements Document (TRD)
-## Project: Vraj Patel – Professional Portfolio Website
+## Project: Siraj Patel – Professional Portfolio Website
 **Document Version:** 1.0  
 **Date:** July 5, 2026  
 **Author:** Antigravity (AI Coding Assistant)  
