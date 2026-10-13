@@ -165,14 +165,14 @@ To implement the premium design matching the Dribbble reference (Glassmorphism +
 #### A. WhatsApp Automation
 Rather than utilizing a paid API which requires database credentials and costs money, we will generate a click-to-chat link with a sanitized, pre-filled, and URL-encoded message template.
 
-- **Base URL:** `https://wa.me/919023704709` (using India code `91` based on the PRD section 7.1 suggestion).
+- **Base URL:** `https://wa.me/9662202609` (using India code `91` based on the PRD section 7.1 suggestion).
 - **Template Builder:**
   ```javascript
   const handleWhatsAppChat = (name, message) => {
-    const defaultMsg = `Hello Vraj, I saw your portfolio and would like to connect!`;
+    const defaultMsg = `Hello Siraj, I saw your portfolio and would like to connect!`;
     const userMsg = name && message ? `Hi Vraj, my name is ${name}. ${message}` : defaultMsg;
     const encodedText = encodeURIComponent(userMsg);
-    window.open(`https://wa.me/919023704709?text=${encodedText}`, '_blank');
+    window.open(`https://wa.me/919662202609?text=${encodedText}`, '_blank');
   };
   ```
 
@@ -187,8 +187,8 @@ For standard email sending, the contact form will submit payloads directly to th
   {
     "from_name": "John Doe",
     "from_email": "johndoe@example.com",
-    "message": "Hi Vraj, we would love to hire you for a project...",
-    "to_name": "Vraj Patel",
+    "message": "Hi Siraj, we would love to hire you for a project...",
+    "to_name": "Siraj Patel",
     "reply_to": "johndoe@example.com"
   }
   ```
@@ -197,7 +197,7 @@ For standard email sending, the contact form will submit payloads directly to th
   - `Email`: Valid regex match `^[^\s@]+@[^\s@]+\.[^\s@]+$`.
   - `Message`: String, required, length > 10 characters.
 - **Notifications flow:**
-  - Primary: Submits to Vraj's inbox (`patelvraj1922@gmail.com`).
+  - Primary: Submits to Vraj's inbox (`sirajpatel032007@gmail.com`).
   - Secondary (Auto-reply): Automatically responds to the sender confirming receipt of their message.
 
 ---
@@ -215,7 +215,7 @@ Three.js and custom shaders can stress mobile processors. We will implement stri
    ```
 3. **Frustum Culling & Cleanups:** In React, ensure all geometries, materials, and textures are explicitly disposed of on component unmounting (`geometry.dispose()`, `material.dispose()`) to prevent memory leaks.
 4. **Debounced Event Handlers:** Debounce scroll, mousemove, and resize event handlers to avoid frame dropping.
-5. **Asset Compression:** The image [vraj_photo.jpg](file:///C:/Users/patel/OneDrive/Desktop/PORTFOLIO/vraj_photo.jpg) is 218KB. We will compress it to **WebP** format (~40KB) and load it with `loading="lazy"` tags.
+5. **Asset Compression:** The image [vraj_photo.jpg](file:///C:/Users/patel/OneDrive/Desktop/PORTFOLIO/siraj_photo.jpeg) is 218KB. We will compress it to **WebP** format (~40KB) and load it with `loading="lazy"` tags.
 
 ---
 
@@ -243,7 +243,7 @@ gantt
 
 ## 7. Approved Decisions & Setup
 The system configurations have been finalized as follows:
-1. **WhatsApp Contact Number:** Configured to use India's country code: `+91 9023704709`.
+1. **WhatsApp Contact Number:** Configured to use India's country code: `+91 9662202609`.
 2. **Framework & Styling:** Built on **Vite + React** using **Vanilla CSS (and CSS Modules)** for styling.
 3. **Email Provider:** Handled via **EmailJS** client-side library integration.
 

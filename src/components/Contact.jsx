@@ -12,7 +12,7 @@ export default function Contact() {
 
   const handleWhatsApp = (e) => {
     e.preventDefault();
-    const defaultMsg = `Hello Vraj, I saw your portfolio and would like to connect!`;
+    const defaultMsg = `Hello Siraj, I saw your portfolio and would like to connect!`;
     const userMsg = formData.name && formData.message 
       ? `Hi Vraj, my name is ${formData.name}. ${formData.message}` 
       : defaultMsg;
@@ -89,7 +89,7 @@ export default function Contact() {
               </svg>
               <div>
                 <h4>Phone & WhatsApp</h4>
-                <a href="tel:+919023704709">+91 9662202609</a>
+                <a href="tel:+919662202609">+91 9662202609</a>
               </div>
             </div>
           </div>
