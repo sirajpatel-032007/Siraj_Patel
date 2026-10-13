@@ -1,5 +1,5 @@
 import './About.css';
-import SirajPhoto from '../assets/siraj_photo.jpg';
+import SirajPhoto from '../assets/siraj_photo.jpeg';
 
 export default function About() {
   return (
