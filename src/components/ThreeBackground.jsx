@@ -72,11 +72,11 @@ export default function ThreeBackground() {
           p.y += cos(p.x - t + fi * 0.8 + u_scroll * 0.2) * 0.35 / fi;
         }
 
-        // Color definitions (Obsidian Black, Neon Green, Emerald, Forest Green)
-        vec3 colorBg = vec3(0.0, 0.0, 0.0);          // Pure Black
-        vec3 colorGreen1 = vec3(0.0, 1.0, 0.4);      // Neon Light Green
-        vec3 colorGreen2 = vec3(0.05, 0.65, 0.25);   // Emerald Green
-        vec3 colorGreen3 = vec3(0.02, 0.35, 0.12);   // Forest Green
+        // Soft neutral background with restrained teal accents
+        vec3 colorBg = vec3(0.969, 0.976, 0.988);
+        vec3 colorGreen1 = vec3(0.55, 0.78, 0.75);
+        vec3 colorGreen2 = vec3(0.58, 0.69, 0.82);
+        vec3 colorGreen3 = vec3(0.76, 0.82, 0.88);
 
         // Dynamic interpolation value
         float mixVal = sin(p.x + p.y) * 0.5 + 0.5;
@@ -87,11 +87,11 @@ export default function ThreeBackground() {
         // Add deep forest green accent based on scroll position
         liquidColor = mix(liquidColor, colorGreen3, sin(u_scroll * 2.0) * 0.5 + 0.5);
         
-        // Blend liquid simulation with pure black background
-        vec3 finalColor = mix(colorBg, liquidColor, 0.16);
+        // Keep the liquid effect subtle against the light background
+        vec3 finalColor = mix(colorBg, liquidColor, 0.045);
         
         // Localized interactive glow on mouse displacement (green glow)
-        finalColor += vec3(mouseInfluence * 0.01, mouseInfluence * 0.12, mouseInfluence * 0.04);
+        finalColor += vec3(mouseInfluence * 0.005, mouseInfluence * 0.012, mouseInfluence * 0.01);
 
         gl_FragColor = vec4(finalColor, 1.0);
       }

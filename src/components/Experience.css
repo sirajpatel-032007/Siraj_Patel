@@ -84,8 +84,8 @@
   width: 15px;
   height: 15px;
   background: var(--bg-card);
-  border-left: 1px solid rgba(255, 255, 255, 0.05);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  border-left: 1px solid var(--border-color);
+  border-bottom: 1px solid var(--border-color);
   transform: rotate(45deg);
   backdrop-filter: var(--glass-blur);
   -webkit-backdrop-filter: var(--glass-blur);

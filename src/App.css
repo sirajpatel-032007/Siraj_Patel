@@ -7,10 +7,10 @@
 }
 
 .footer-panel {
-  background: rgba(14, 11, 23, 0.7);
+  background: rgba(255, 255, 255, 0.92);
   backdrop-filter: var(--glass-blur);
   -webkit-backdrop-filter: var(--glass-blur);
-  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  border-top: 1px solid var(--border-color);
   padding: 40px 24px;
   text-align: center;
   position: relative;
